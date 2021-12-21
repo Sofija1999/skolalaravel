@@ -10,8 +10,16 @@ class Ucenik extends Model
 {
     use HasFactory;
 
-    public function profesori()
+    protected $fillable = [
+        'ime',
+        'prezime',
+        'adresa',
+        'email',
+        'profesor_id'
+    ];
+
+    public function profesor()
     {
-        return $this->hasMany(Profesor::class);
+        return $this->belongsTo(Profesor::class);
     }
 }

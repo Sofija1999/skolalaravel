@@ -3,6 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Database\Seeders\SkolaSeeder;
+use Database\Seeders\ProfesorSeeder;
+use Database\Seeders\UcenikSeeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +17,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $skolaSeeder = new SkolaSeeder();
+        $profesorSeeder = new ProfesorSeeder();
+        $ucenikSeeder = new UcenikSeeder();
+
+        $skolaSeeder->run();
+        $profesorSeeder->run();
+        $ucenikSeeder->run();
     }
 }

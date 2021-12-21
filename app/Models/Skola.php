@@ -10,6 +10,14 @@ class Skola extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'naziv',
+        'grad',
+        'adresa',
+        'skola_email',
+        'direktor'
+    ];
+
     public function profesori()
     {
         return $this->hasMany(Profesor::class);
